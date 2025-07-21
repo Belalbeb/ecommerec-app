@@ -20,6 +20,7 @@ A full-stack e-commerce web application using Angular (frontend), Express.js (ba
 - Responsive UI for desktop and mobile
 
 ## Project Structure
+```
 ecommerce-app/
 │
 ├── backend/                  # Node.js + Express + MongoDB
@@ -42,3 +43,4 @@ ecommerce-app/
 │
 ├── README.md
 └── package.json
+```
