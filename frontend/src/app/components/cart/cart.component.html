@@ -1,0 +1,35 @@
+@if(cartItems.length>0){
+
+<div class="container mt-5" >
+  <h3>Your Cart</h3>
+  @for (item of cartItems; track item.productId) {
+  <div  class="card mb-3">
+    <div class="row g-0 align-items-center">
+      <div class="col-md-2">
+        <img [src]="item.productId.image" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.productId.title }}</h5>
+          <p class="card-text">{{ item.productId.description }}</p>
+          <p class="card-text"><small class="text-muted">{{ item.productId.category }}</small></p>
+        </div>
+      </div>
+   <div class="col-md-4 text-center">
+  <div class="d-flex align-items-center justify-content-center gap-2">
+    <input type="number" [(ngModel)]="item.quantity" class="form-control w-50" min="1">
+    <button (click)="updateItemQuantity(item.productId._id, item.quantity)" class="btn btn-primary">Update</button>
+    <button (click)="removeItem(item.productId._id)" class="btn btn-danger">Delete</button>
+  </div>
+</div>
+
+    </div>
+  </div>}
+</div>
+}
+@else{
+
+  <div class="alert alert-warning text-center">
+    Your cart is empty.
+  </div>
+}

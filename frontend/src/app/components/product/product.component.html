@@ -1,0 +1,21 @@
+
+  <div class="card h-100 shadow">
+    <img [src]="product.image" class="card-img-top p-3" alt="{{ product.title }}" style="height: 300px; object-fit: contain;" />
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title text-primary">{{ product.title }}</h5>
+   <p class="card-text text-muted">{{ product.description | slice:0:80 }}...</p>
+
+      <h6 class="text-success fw-bold">$ {{ product.price }}</h6>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <button (click)="addToCart(product)" class="btn btn-warning w-50 me-2 fw-bold">
+        🛒 Add to Cart
+      </button>
+      <a (click)="goToDetails(product._id)" class="btn btn-outline-primary w-50 fw-bold">
+        🔍 Details
+        <!-- [routerLink]="['/details', product._id]  -->
+      </a>
+    </div>
+  </div>
+
+

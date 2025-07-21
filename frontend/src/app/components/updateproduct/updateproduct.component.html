@@ -1,0 +1,13 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100 bg-body-tertiary">
+  <div class="bg-white p-4 rounded shadow" style="width: 100%; max-width: 400px;">
+    <h2 class="text-center mb-4 text-warning">Update Product</h2>
+    <form [formGroup]="editForm" (ngSubmit)="updateProduct()">
+      <input class="form-control mb-3" formControlName="title" placeholder="Title" />
+      <input class="form-control mb-3" type="number" formControlName="price" placeholder="Price" />
+      <input class="form-control mb-3" formControlName="category" placeholder="Category" />
+      <textarea class="form-control mb-3" formControlName="description" placeholder="Description"></textarea>
+      <input class="form-control mb-3" formControlName="image" placeholder="Image URL" />
+      <button class="btn btn-warning w-100" type="submit">Update</button>
+    </form>
+  </div>
+</div>

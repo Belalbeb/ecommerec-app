@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-warning" routerLink="/home">Bebo</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBoom">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarBoom">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Products</a>
+
+        </li>
+
+          @if(isAdmin()){
+          <li class="nav-item">
+          <a class="nav-link" routerLink="/newproduct">New Product</a>
+
+        </li>}
+
+
+         <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-3">
+
+        <a class="btn btn-outline-light position-relative" routerLink="/cart">
+          <i class="bi bi-cart"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{lenght}}
+          </span>
+        </a>
+
+         @if(!isLoggedIn()){
+        <a class="btn btn-outline-warning" routerLink="/login">Login</a>
+
+
+        <a class="btn btn-outline-warning" routerLink="/register">Register</a>}
+        @else {
+        <a class="btn btn-outline-warning" (click)="logout()">Logout</a>}
+      </div>
+    </div>
+  </div>
+</nav>
